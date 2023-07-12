@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cih26ul60b3lu"]
+
+[ext_resource type="Texture2D" uid="uid://cx35og0h4wh0m" path="res://Materials/hazard.png" id="1_w6yh5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5d5wd"]
+albedo_texture = ExtResource("1_w6yh5")
+
+[node name="Node3D" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)
+use_collision = true
+material = SubResource("StandardMaterial3D_5d5wd")
