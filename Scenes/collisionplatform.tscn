@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://126v7a1umktd"]
+
+[ext_resource type="PackedScene" uid="uid://cih26ul60b3lu" path="res://Scenes/collisionbox.tscn" id="1_325rp"]
+[ext_resource type="Texture2D" uid="uid://cx35og0h4wh0m" path="res://Materials/hazard.png" id="1_p8umk"]
+[ext_resource type="PackedScene" uid="uid://dnevrcw7ys2sy" path="res://Scenes/collisionbox2.tscn" id="3_7f17t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qw1d"]
+albedo_texture = ExtResource("1_p8umk")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" parent="." instance=ExtResource("1_325rp")]
+transform = Transform3D(2.14492, -0.642788, 0, 1.79981, 0.766044, 0, 0, 0, 2, -4.29629, 0.5, 0)
+material = SubResource("StandardMaterial3D_3qw1d")
+
+[node name="Node3D2" parent="." instance=ExtResource("1_325rp")]
+transform = Transform3D(-2.14492, 0.642788, -1.74846e-07, 1.79981, 0.766044, 0, 1.87515e-07, -5.61943e-08, -2, 3.22062, 0.5, 0)
+material = SubResource("StandardMaterial3D_3qw1d")
+
+[node name="Node3D3" parent="." instance=ExtResource("1_325rp")]
+transform = Transform3D(-9.37576e-08, 2.80971e-08, -2, 1.79981, 0.766044, 0, 2.14492, -0.642788, -8.74228e-08, 0, 0.5, -6.614)
+material = SubResource("StandardMaterial3D_3qw1d")
+
+[node name="Node3D4" parent="." instance=ExtResource("1_325rp")]
+transform = Transform3D(-9.37576e-08, 2.80971e-08, 2, 1.79981, 0.766044, 0, -2.14492, 0.642788, -8.74228e-08, 0, 0.5, 5.89891)
+material = SubResource("StandardMaterial3D_3qw1d")
+
+[node name="Node3D5" parent="." instance=ExtResource("3_7f17t")]
+transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1, 0, 2, -4.37114e-08, -0.54139, 1.28078, -0.349728)
+size = Vector3(6, 5.5, 1)

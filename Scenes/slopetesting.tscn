@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs6wrdf442dp5"]
+
+[ext_resource type="PackedScene" uid="uid://dnevrcw7ys2sy" path="res://Scenes/collisionbox2.tscn" id="1_51w47"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" parent="." instance=ExtResource("1_51w47")]
+transform = Transform3D(1, 0, 0, 0, -1.28558, -0.766044, 0, 1.53209, -0.642788, -0.5, 1, 1.84838)
+size = Vector3(1, 6, 1)
+
+[node name="Node3D3" parent="." instance=ExtResource("1_51w47")]
+transform = Transform3D(1, 0, 0, 0, -1.41421, -0.707107, 0, 1.41421, -0.707107, -5.6103, 1, 2.59082)
+size = Vector3(1, 6, 1)
+
+[node name="Node3D2" parent="." instance=ExtResource("1_51w47")]
+transform = Transform3D(1, 0, 0, 0, -0.68404, -0.939693, 0, 1.87939, -0.34202, 4.0932, 1, -0.511547)
+size = Vector3(1, 6, 1)
+
+[node name="Node3D4" parent="." instance=ExtResource("1_51w47")]
+transform = Transform3D(1, 0, 0, 0, -0.347296, -0.984808, 0, 1.96962, -0.173648, 7.90402, 0.139813, -0.511547)
+size = Vector3(1, 6, 1)
