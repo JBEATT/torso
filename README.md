@@ -4,7 +4,7 @@
 
 ## Description
 
-Torso is the brain child and magnum opium opus of me a first-person RPG horror adventure game.
+Torso is the brain child and magnum opus of me it's a first-person RPG horror adventure game. its gonna be great trust me bro
 
 ## Features
 
