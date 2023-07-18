@@ -10,7 +10,7 @@ const JUMP_VELOCITY = 4.0    #(JUMP HEIGHT ESSENTIALLY)
 const SENSITIVITY = 0.0015
 
 var truespeed = WALK_SPEED
-var isCrouching = false
+var crouched : bool
 var isSprinting = false
 var gravity = 9.8
 
@@ -21,6 +21,7 @@ var gravity = 9.8
 # On ready function.
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	var crouched = false
 	
 # Handles looking with camera.
 func _input(event):
@@ -31,37 +32,28 @@ func _input(event):
 		
 	if Input.is_action_just_pressed("escape"):
 		get_tree().quit()
-
-	
+		
 func _physics_process(delta):
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump")  and is_on_floor() and isCrouching == false:
+	if Input.is_action_just_pressed("jump")  and is_on_floor() and crouched == false:
 		velocity.y = JUMP_VELOCITY
-		
-	# Handle Inventory.
-	if Input.is_action_just_pressed("inventory"):
-		$Inventory.visible = !$Inventory.visible
-		if $Inventory.visible:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		else:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		
+			
 	# Handle Sprint.
-	if Input.is_action_pressed("sprint") and isCrouching == false:
+	if Input.is_action_pressed("sprint") and crouched == false:
 		truespeed = SPRINT_SPEED
 	else:
 		truespeed = WALK_SPEED
 		
 	# Handle Crouch.
 	if Input.is_action_just_pressed("crouch"):
-		if isCrouching == false:
+		if crouched == false:
 			movementStateChange("crouch")
 			truespeed = CROUCH_SPEED	
-		elif isCrouching == true:
+		elif crouched == true:
 			if raycast.is_colliding():
 				velocity.y = JUMP_VELOCITY
 			else:
@@ -94,12 +86,12 @@ func movementStateChange(changeType):
 	match changeType:
 		"crouch":
 				$AnimationPlayer.play("StandingToCrouch")
-				isCrouching = true
+				crouched = true
 				changeCollisionShapeTo("crouching")
 				
 		"uncrouch":
 			$AnimationPlayer.play_backwards("StandingToCrouch")
-			isCrouching = false
+			crouched = false
 			changeCollisionShapeTo("standing")
 
 func changeCollisionShapeTo(shape):

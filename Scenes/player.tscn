@@ -1,8 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cys3i7o153iis"]
+[gd_scene load_steps=7 format=3 uid="uid://cys3i7o153iis"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_iom1o"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_bruvy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6rqp1"]
 
@@ -50,23 +48,18 @@ _data = {
 floor_max_angle = 0.698132
 script = ExtResource("1_iom1o")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-visible = false
-mesh = SubResource("CapsuleMesh_bruvy")
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.05)
 
 [node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_6rqp1")
 
 [node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870058, 0)
 shape = SubResource("CapsuleShape3D_u0ocn")
-
-[node name="Head" type="Node3D" parent="."]
-
-[node name="Camera3D" type="Camera3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
