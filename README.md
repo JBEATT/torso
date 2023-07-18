@@ -1,6 +1,6 @@
 # Torso
 
-![Game Logo](link_to_logo.png)
+![Game Logo](torsologo.png)
 
 ## Description
 
